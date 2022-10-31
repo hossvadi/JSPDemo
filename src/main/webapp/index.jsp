@@ -7,6 +7,10 @@
 
 We are starting to coding < javaDi> at <%= new java.util.Date() %>
 
+<hr>
+
+<jsp:include page="student-form.html"/>
+
 <jsp:include page="footer.jsp" />
 </body>
 </html> 
