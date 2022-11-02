@@ -4,7 +4,8 @@
 
 <body>
 
-<form action="student-response.jsp">
+<!-- <form action="student-response.jsp"> -->
+<form action="StudentServelet" method="GET">
 
 	Firstname: <input type="text" name="firstname" />
 	<br/><br/>
@@ -12,12 +13,20 @@
 	Lastname: <input type="text" name="lastname" />
 	<br/><br/>
 	
-	Country: <select name="country">
+	Country:
+	<select name="country">
 		<option>---</option>
 		<option>Iran</option>
 		<option>Italy</option>
 		<option>Spain</option>
 		<option>France</option>
+	</select>
+	
+	 | Sex:
+	<select name="yourSex"?>
+		<option>Man</option>
+		<option>Woman</option>
+		<option>/</option>
 	</select>
 	<br/><br/>
 
@@ -28,7 +37,7 @@
 	<input type="checkbox" name="favoriteLanguage" value="PHP"> PHP
 	<br/><br/>
 	
-	Do you like to receive news lrtters?<br/>
+	Do you like to receive news letters?<br/>
 	<input type="radio" name="newsLetters" value="No"> No
 	<input type="radio" name="newsLetters" value="Yes"> Yes
 	<br/><br/>
