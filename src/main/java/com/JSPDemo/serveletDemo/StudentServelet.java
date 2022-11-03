@@ -1,6 +1,8 @@
 package com.JSPDemo.serveletDemo;
 
 import java.io.IOException;
+import java.io.OutputStream;
+
 import javax.servlet.ServletException;
 import java.io.PrintWriter;
 import javax.servlet.annotation.WebServlet;
@@ -27,6 +29,10 @@ public class StudentServelet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// testing the get methods before implementations
+		// String jsonResponse = "{\"message\": \"Success\"}";
+		// this.outPutResponse(response,  jsonResponse, 200);
+		
 		// Step 1: set the content type
 		response.setContentType("text/html");
 		
@@ -57,4 +63,18 @@ public class StudentServelet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	private void outPutResponse(HttpServletResponse response, String payload, int status) {
+		response.setHeader("Content-Type", "application/json");
+		try {
+			response.setStatus(status);
+			if (payload != null) {
+				OutputStream outputStream = response.getOutputStream();
+				outputStream.write(payload.getBytes());
+				outputStream.flush();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
