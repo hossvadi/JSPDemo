@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class ServeletDemo
  */
 @WebServlet("/StudentServelet")
 public class StudentServelet extends HttpServlet {
+	
+	private StudentService studentService;
+	
+	public StudentServelet() {
+		this.studentService = new StudentService();
+	}
+	
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public StudentServelet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,6 +31,7 @@ public class StudentServelet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// testing the get methods before implementations
 		// String jsonResponse = "{\"message\": \"Success\"}";
+		// String jsonResponse =  this.studentService.findAllStudents();
 		// this.outPutResponse(response,  jsonResponse, 200);
 		
 		// Step 1: set the content type
