@@ -30,7 +30,7 @@
 		}
 	%>
 	
-	<!-- now show a personalized page ... use the defaultSexvariable -->
+	<!-- now show a personalized page ... use the default Sexvariable -->
 	
 	<!-- show new selection for sex -->
 	<h4>Selected Sex <%= defaultSex %></h4>
